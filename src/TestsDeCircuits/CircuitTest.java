@@ -84,7 +84,7 @@ class CircuitTest {
 
     circuit6.mettreSousTension(600);
     assertEquals(90, circuit6.calculerResistance(), 0.1);
-    assertEquals(20/3, circuit6.calculerCourant(), 0.1);
+    assertEquals(20.0/3, circuit6.calculerCourant(), 0.1);
     assertEquals(600, circuit6.calculerTension(), 0.1);
 
 
