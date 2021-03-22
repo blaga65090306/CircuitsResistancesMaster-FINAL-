@@ -4,13 +4,16 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static final String Parallele = "P" ;
-    private static final String Serie = "S";
-
     public static void main(String[] args) {
 
-        System.out.println("Pour construire votre circuit veuillez procéder comme suit:\nPour débuter un circuit en série --> '('\nPour débuter un circuit en parallèle --> '['\n" +
-                "Pour fermer un circuit en série --> ')'\nPour fermer un circuit en parallèle --> ']'\nN'oubliez pas de séparer chaque caractères par un espace");
+        System.out.println("Pour construire votre circuit veuillez procéder comme suit:\n" +
+                "\nPour OUVRIR un circuit en SÉRIE --> (\n" +
+                "Pour OUVRIR un circuit en PARALLÈLE --> [\n" +
+                "Pour FERMER un circuit en SÉRIE --> )\n" +
+                "Pour FERMER un circuit en PARALLÈLE --> ]\n" +
+                "\nN'oubliez pas de séparer CHAQUES caractères par un ESPACE" +
+                "\nPour vous aider --> Code couleur résisteur: (NBROJVbMGLAo)\n" +
+                "\nVeuillez créer vos circuits avec vos résisteurs --> ");
 
         Scanner sc = new Scanner(System.in);
         String choixUtilisateur = sc.nextLine();
