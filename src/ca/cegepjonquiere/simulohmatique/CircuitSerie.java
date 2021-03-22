@@ -30,8 +30,8 @@ public class CircuitSerie extends AbstractCircuit {
                 total += "\n[" + iComposant.toString() + "]";
             }
         }
-        return "\nVotre circuit en serie fait un total de : " + "[" + calculerResistance() + "Ω, " + calculerCourant() + "A, " + calculerTension() + "V]" +
-                "\nChacun de vos resistor dans votre circuit en serie fait : " + total;
+        return "\nVotre circuit en serie fait un total de: " + "[" + calculerResistance() + "Ω, " + calculerCourant() + "A, " + calculerTension() + "V]" +
+                "\nChacun de vos resisteurs dans votre circuit en serie font: " + total;
     }
 }
 

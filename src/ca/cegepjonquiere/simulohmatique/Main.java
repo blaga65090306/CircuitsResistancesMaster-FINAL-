@@ -19,7 +19,7 @@ public class Main {
         String choixUtilisateur = sc.nextLine();
         AbstractCircuit circuit = FabriqueCircuit.fabriquerCircuit(choixUtilisateur);
 
-        System.out.println("\nEntrez une tension en volts");
+        System.out.println("\nVeuillez entrer une tension en volts --> ");
         double choixUtilisateurTension = sc.nextInt();
         circuit.mettreSousTension(choixUtilisateurTension);
 

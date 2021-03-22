@@ -30,7 +30,7 @@ public class CircuitParallele extends AbstractCircuit {
                 total += "\n[" + iComposant.toString() + "]";
             }
         }
-        return "\nVotre circuit en parallele fait un total de : " + "[" + calculerResistance() + "Ω, " + calculerCourant() + "A, " + calculerTension() + "V]" +
-                "\nChacun de vos resistor dans votre circuit en parallele fait : " + total;
+        return "\nVotre circuit en parallele fait un total de: " + "[" + calculerResistance() + "Ω, " + calculerCourant() + "A, " + calculerTension() + "V]" +
+                "\nChacun de vos resisteurs dans votre circuit en parallele font: " + total;
     }
 }
