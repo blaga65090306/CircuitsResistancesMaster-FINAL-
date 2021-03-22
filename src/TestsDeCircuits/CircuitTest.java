@@ -43,6 +43,56 @@ class CircuitTest {
     }
 
     @Test
+    public void circuitXTest(){
+    Resistor rA = new Resistor();
+    rA.setResistance(10);
+    Resistor rB = new Resistor();
+    rB.setResistance(30);
+    Resistor rC = new Resistor();
+    rC.setResistance(40);
+    Resistor rD = new Resistor();
+    rD.setResistance(30);
+    Resistor rE = new Resistor();
+    rE.setResistance(50);
+    Resistor rF = new Resistor();
+    rF.setResistance(75);
+    Resistor rG = new Resistor();
+    rG.setResistance(150);
+    Resistor rH = new Resistor();
+    rH.setResistance(30);
+    AbstractCircuit circuit = new CircuitSerie();
+    circuit.ajouterComposant(rA);
+    circuit.ajouterComposant(rB);
+    AbstractCircuit circuit1 = new CircuitParallele();
+    circuit1.ajouterComposant(rC);
+    circuit1.ajouterComposant(circuit);
+    AbstractCircuit circuit2 = new CircuitSerie();
+    circuit2.ajouterComposant(rD);
+    circuit2.ajouterComposant(circuit1);
+    AbstractCircuit circuit3 = new CircuitParallele();
+    circuit3.ajouterComposant(rE);
+    circuit3.ajouterComposant(circuit2);
+    AbstractCircuit circuit4 = new CircuitSerie();
+    circuit4.ajouterComposant(rF);
+    circuit4.ajouterComposant(circuit3);
+    AbstractCircuit circuit5 = new CircuitParallele();
+    circuit5.ajouterComposant(rG);
+    circuit5.ajouterComposant(circuit4);
+    AbstractCircuit circuit6 = new CircuitSerie();
+    circuit6.ajouterComposant(rH);
+    circuit6.ajouterComposant(circuit5);
+
+    circuit6.mettreSousTension(600);
+    assertEquals(90, circuit6.calculerResistance(), 0.1);
+    assertEquals(20/3, circuit6.calculerCourant(), 0.1);
+    assertEquals(600, circuit6.calculerTension(), 0.1);
+
+
+
+
+    }
+
+    @Test
     public void mixteTest(){
         Resistor r1 = new Resistor();
         r1.setResistance(5);
@@ -59,6 +109,8 @@ class CircuitTest {
         circuit2.ajouterComposant(r1);
         circuit2.ajouterComposant(circuit);
         circuit2.ajouterComposant(r4);
+
+        circuit2.mettreSousTension(60);
         assertEquals(15, circuit2.calculerResistance(), 0.1);
         assertEquals(4, circuit2.calculerCourant(), 0.1);
         assertEquals(60, circuit2.calculerTension(), 0.1);

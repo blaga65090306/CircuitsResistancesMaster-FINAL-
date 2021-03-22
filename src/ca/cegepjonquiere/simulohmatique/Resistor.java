@@ -7,6 +7,15 @@ public class Resistor implements IComposant {
     private double tolerance;
     private double resistance;
     private double tension;
+    private double courant;
+
+    public double getCourant() {
+        return courant;
+    }
+
+    public void setCourant(double courant) {
+        this.courant = courant;
+    }
 
     public double getTolerance() {
         return tolerance;
