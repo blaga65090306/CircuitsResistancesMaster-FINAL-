@@ -31,15 +31,16 @@ public class FabriqueResistor {
 
     }
 
-    public static Resistor fabriquerResistor(String couleurs) {
+    public static Resistor fabriquerResistor(String couleurs) throws IllegalArgumentException {
+        IllegalArgumentException illegalArgumentException = new IllegalArgumentException();
         if(couleurs == null){
-            return null;
+            throw illegalArgumentException;
         }
         Pattern CodeOhm = Pattern.compile("[NBROJVbMGL][NBROJVbMGLAo]{2,3}[BROJVbMGAo]");
         Matcher CodeResistor = CodeOhm.matcher(couleurs);
 
         if (!CodeResistor.matches()) {
-            return null;
+            throw illegalArgumentException;
         }
         Resistor r = new Resistor();
         if (couleurs.length() == 5) {

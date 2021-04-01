@@ -4,7 +4,8 @@ import java.util.Stack;
 
 public class FabriqueCircuit {
 
-    public static AbstractCircuit fabriquerCircuit(String description) {
+    public static AbstractCircuit fabriquerCircuit(String description) throws IllegalArgumentException {
+        IllegalArgumentException illegalArgumentException = new IllegalArgumentException();
         AbstractCircuit p = null;
         Stack<AbstractCircuit> pileSousCircuit = new Stack<>();
         String[] sousCircuit = description.split(" ");
@@ -30,7 +31,7 @@ public class FabriqueCircuit {
                     if (r != null) {
                         pileSousCircuit.peek().ajouterComposant(r);
                     } else {
-                        return null;
+                        throw illegalArgumentException;
                     }
                 }
             }
