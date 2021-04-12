@@ -5,7 +5,7 @@ import java.util.Stack;
 public class FabriqueCircuit {
 
     public static AbstractCircuit fabriquerCircuit(String description) throws IllegalArgumentException {
-        IllegalArgumentException illegalArgumentException = new IllegalArgumentException("\nVotre circuit ne concorde pas...");
+        IllegalArgumentException illegalArgumentException = new IllegalArgumentException("\nVotre circuit ne concorde pas... Il manque une parenthèse ou un crochet");
         AbstractCircuit p = null;
         Stack<AbstractCircuit> pileSousCircuit = new Stack<>();
         Stack<Character> delim = new Stack<>();
