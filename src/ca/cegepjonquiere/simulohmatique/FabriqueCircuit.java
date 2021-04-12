@@ -8,23 +8,37 @@ public class FabriqueCircuit {
         IllegalArgumentException illegalArgumentException = new IllegalArgumentException("\nVotre circuit ne concorde pas...");
         AbstractCircuit p = null;
         Stack<AbstractCircuit> pileSousCircuit = new Stack<>();
+        Stack<Character> delim = new Stack<>();
         String[] sousCircuit = description.split(" ");
         for (String s : sousCircuit) {
             switch (s) {
                 case "(" -> {
+                    delim.push('(');
                     CircuitSerie cs1 = new CircuitSerie();
                     if (!pileSousCircuit.empty()) {
                         pileSousCircuit.peek().ajouterComposant(cs1);
                     }
                     pileSousCircuit.push(cs1);
                 }
-                case ")", "]" -> p = pileSousCircuit.pop();
+                case ")" -> {
+                    p = pileSousCircuit.pop();
+                    if (delim.empty() || delim.pop() != '(') {
+                        throw illegalArgumentException;
+                    }
+                }
                 case "[" -> {
+                    delim.push('[');
                     CircuitParallele cp1 = new CircuitParallele();
                     if (!pileSousCircuit.empty()) {
                         pileSousCircuit.peek().ajouterComposant(cp1);
                     }
                     pileSousCircuit.push(cp1);
+                }
+                case "]" -> {
+                    p = pileSousCircuit.pop();
+                    if (delim.empty() || delim.pop() != '[') {
+                        throw illegalArgumentException;
+                    }
                 }
                 default -> {
                     Resistor r = FabriqueResistor.fabriquerResistor(s);
