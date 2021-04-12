@@ -5,7 +5,7 @@ import java.util.Stack;
 public class FabriqueCircuit {
 
     public static AbstractCircuit fabriquerCircuit(String description) throws IllegalArgumentException {
-        IllegalArgumentException illegalArgumentException = new IllegalArgumentException("\nVotre circuit ne concorde pas... Il manque une parenthèse ou un crochet");
+        IllegalArgumentException illegalArgumentException = new IllegalArgumentException("\nVotre circuit ne concorde pas... Il manque une parenthèse ou un crochet.");
         AbstractCircuit p = null;
         Stack<AbstractCircuit> pileSousCircuit = new Stack<>();
         Stack<Character> delim = new Stack<>();
@@ -22,6 +22,9 @@ public class FabriqueCircuit {
                 }
                 case ")" -> {
                     p = pileSousCircuit.pop();
+                    if (p.empty()){
+                        throw new IllegalArgumentException("\nVotre circuit est ouvert, il n'a aucun composants et le courant n'y circule pas... Veuillez entrez des composants dans votre circuit.");
+                    }
                     if (delim.empty() || delim.pop() != '(') {
                         throw illegalArgumentException;
                     }
@@ -36,6 +39,9 @@ public class FabriqueCircuit {
                 }
                 case "]" -> {
                     p = pileSousCircuit.pop();
+                    if (p.empty()){
+                        throw new IllegalArgumentException("\nVotre circuit est ouvert, il n'a aucun composants et le courant n'y circule pas... Veuillez entrez des composants dans votre circuit.");
+                    }
                     if (delim.empty() || delim.pop() != '[') {
                         throw illegalArgumentException;
                     }

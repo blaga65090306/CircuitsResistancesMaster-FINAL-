@@ -16,6 +16,13 @@ public abstract class AbstractCircuit implements IComposant {
         return iComposantList;
     }
 
+    public boolean empty() {
+        if (iComposantList.isEmpty()) {
+            return true;
+        }
+        return false;
+    }
+
     public void setiComposantList(List<IComposant> iComposantList) {
         this.iComposantList = iComposantList;
     }
