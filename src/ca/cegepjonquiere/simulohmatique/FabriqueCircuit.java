@@ -51,6 +51,9 @@ public class FabriqueCircuit {
             }
 
         }
+        if (!delim.empty()) {
+            throw illegalArgumentException;
+        }
         return p;
     }
 }
