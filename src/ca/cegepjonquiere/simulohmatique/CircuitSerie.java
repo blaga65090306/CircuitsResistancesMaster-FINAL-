@@ -16,7 +16,7 @@ public class CircuitSerie extends AbstractCircuit {
 
     @Override
     public void mettreSousTension(double tension) {
-        IllegalArgumentException illegalArgumentException = new IllegalArgumentException("\nVotre tension est nulle... Veuillez mettre une tension à votre ciruit.");
+        IllegalArgumentException illegalArgumentException = new IllegalArgumentException("\nVotre tension est nulle et cela peut causer un court-circuit... Veuillez mettre une tension à votre ciruit.");
         this.tension = tension;
         for (IComposant iComposant : iComposantList) {
             iComposant.mettreSousTension(iComposant.calculerResistance() * calculerCourant());
