@@ -1,5 +1,7 @@
 package TestsDeCircuits;
 
+import ca.cegepjonquiere.simulohmatique.AbstractCircuit;
+import ca.cegepjonquiere.simulohmatique.FabriqueCircuit;
 import ca.cegepjonquiere.simulohmatique.FabriqueResistor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -34,11 +36,11 @@ class FabriqueResistorTest {
     }
     @Test
     void fromCodeInvalid() {
-        assertNull(FabriqueResistor.fabriquerResistor(""));
-        assertNull(FabriqueResistor.fabriquerResistor("NoNono"));
-        assertNull(FabriqueResistor.fabriquerResistor("oBbo"));
-        assertNull(FabriqueResistor.fabriquerResistor("XZXZZ"));
-        assertNull(FabriqueResistor.fabriquerResistor("RMNNL"));
+        assertThrows(Exception.class, () -> FabriqueCircuit.fabriquerCircuit(""));
+        assertThrows(Exception.class, () -> FabriqueCircuit.fabriquerCircuit("NoNono"));
+        assertThrows(Exception.class, () -> FabriqueCircuit.fabriquerCircuit("oBbo"));
+        assertThrows(Exception.class, () -> FabriqueCircuit.fabriquerCircuit("XZXZZ"));
+        assertThrows(Exception.class, () -> FabriqueCircuit.fabriquerCircuit("RMNNL"));
     }
 
     @Test
@@ -54,5 +56,13 @@ class FabriqueResistorTest {
         assertEquals(5000, FabriqueResistor.fabriquerResistor("VNRo").getResistance());
         assertEquals(2050, FabriqueResistor.fabriquerResistor("RNVBo").getResistance());
         assertEquals(1400000, FabriqueResistor.fabriquerResistor("BJVo").getResistance());
+    }
+
+    @Test
+    void testAvecAssertThrows () {
+        assertThrows(Exception.class, () -> FabriqueCircuit.fabriquerCircuit("gYYbR"));
+        assertThrows(Exception.class, () -> FabriqueCircuit.fabriquerCircuit("[]"));
+        assertThrows(Exception.class, () -> FabriqueCircuit.fabriquerCircuit("()"));
+        assertThrows(Exception.class, () -> FabriqueCircuit.fabriquerCircuit("WhGvB"));
     }
 }

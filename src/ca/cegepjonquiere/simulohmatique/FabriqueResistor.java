@@ -32,7 +32,7 @@ public class FabriqueResistor {
     }
 
     public static Resistor fabriquerResistor(String couleurs) throws IllegalArgumentException {
-        IllegalArgumentException illegalArgumentException = new IllegalArgumentException();
+        IllegalArgumentException illegalArgumentException = new IllegalArgumentException("\nUn de vos résisteurs n'existe pas ou votre circuit n'existe pas...");
         if(couleurs == null){
             throw illegalArgumentException;
         }

@@ -29,8 +29,7 @@ public class Main {
             circuit.mettreSousTension(choixUtilisateurTension);
             System.out.println(circuit);
         }  catch (IllegalArgumentException e) {
-            System.out.println("Un de vos résisteurs n'existe pas...");
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }  finally {
             if (sc != null){
             sc.close();

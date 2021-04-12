@@ -16,9 +16,13 @@ public class CircuitParallele extends AbstractCircuit {
 
     @Override
     public void mettreSousTension(double tension) {
+        IllegalArgumentException illegalArgumentException = new IllegalArgumentException("\nVotre tension est nulle... Veuillez mettre une tension à votre ciruit.");
         this.tension = tension;
         for (IComposant iComposant : iComposantList) {
             iComposant.mettreSousTension(tension);
+        }
+        if (tension == 0) {
+            throw illegalArgumentException;
         }
     }
 
