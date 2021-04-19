@@ -21,9 +21,9 @@ public class CircuitSerie extends AbstractCircuit {
 
     @Override
     public String toString() {
-        String total = iComposantList.stream().map(IComposant::toString).collect(Collectors.joining(" "));
+        String total = iComposantList.stream().map(c -> "\n[" + c.toString() + "]").collect(Collectors.joining(" "));
         return "\nVotre circuit en serie fait un total de: " + "[" + calculerResistance() + "Ω, " + calculerCourant() + "A, " + calculerTension() + "V]" +
-                "\nChacun de vos resisteurs dans votre circuit en serie font: " + total;
+                "\n\nChacun de vos resisteurs dans votre circuit en serie font: " + total;
     }
 }
 

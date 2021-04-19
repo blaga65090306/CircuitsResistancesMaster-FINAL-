@@ -21,8 +21,8 @@ public class CircuitParallele extends AbstractCircuit {
 
     @Override
     public String toString() {
-        String total = iComposantList.stream().map(IComposant::toString).collect(Collectors.joining(" "));
+        String total = iComposantList.stream().map(c -> "\n[" + c.toString() + "]").collect(Collectors.joining(" "));
         return "\nVotre circuit en parallele fait un total de: " + "[" + calculerResistance() + "Ω, " + calculerCourant() + "A, " + calculerTension() + "V]" +
-                "\nChacun de vos resisteurs dans votre circuit en parallele font: " + total;
+                "\n\nChacun de vos resisteurs dans votre circuit en parallele font: " + total;
     }
 }

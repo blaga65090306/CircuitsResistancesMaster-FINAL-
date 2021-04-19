@@ -14,26 +14,22 @@ public class Main {
                 Pour FERMER un circuit en SÉRIE --> )
                 Pour FERMER un circuit en PARALLÈLE --> ]
 
-                N'oubliez pas de séparer CHAQUES caractères par un ESPACE
+                N'oubliez pas de séparer CHAQUE caractère par un ESPACE
                 Pour vous aider --> Code couleur résisteur: (NBROJVbMGLAo)
 
                 Veuillez créer vos circuits avec vos résisteurs -->\s""");
 
         Scanner sc = new Scanner(System.in);
-        String choixUtilisateur = sc.nextLine();
 
-        try {
+        try (sc) {
+            String choixUtilisateur = sc.nextLine();
             AbstractCircuit circuit = FabriqueCircuit.fabriquerCircuit(choixUtilisateur);
             System.out.println("\nVeuillez entrer une tension en volts --> ");
             double choixUtilisateurTension = sc.nextInt();
             circuit.mettreSousTension(choixUtilisateurTension);
             System.out.println(circuit);
-        }  catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
-        }  finally {
-            if (sc != null){
-            sc.close();
-            }
         }
     }
 }
