@@ -32,10 +32,10 @@ public class FabriqueResistor {
     }
 
     public static Resistor fabriquerResistor(String couleurs) throws IllegalArgumentException {
-        IllegalArgumentException illegalArgumentException = new IllegalArgumentException("\nUn ou plusieurs de vos résisteurs n'existe pas --> " + couleurs);
-        if(couleurs == null){
+        IllegalArgumentException illegalArgumentException = new IllegalArgumentException("\nUn ou plusieurs de vos résisteurs n'existe pas --> " + couleurs + "...");
+        /*if(couleurs == null){
             throw illegalArgumentException;
-        }
+        }*/
         Pattern CodeOhm = Pattern.compile("[NBROJVbMGL][NBROJVbMGLAo]{2,3}[BROJVbMGAo]");
         Matcher CodeResistor = CodeOhm.matcher(couleurs);
 
