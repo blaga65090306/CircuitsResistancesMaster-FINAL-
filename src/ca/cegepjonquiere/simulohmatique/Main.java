@@ -53,7 +53,7 @@ public class Main {
             System.out.println(circuit);
         } catch (IllegalArgumentException e) { // C'est tannant je ne suis pas capable
             System.out.println(e.getMessage());// de faire imprimer "le circuit est vide veuillez entrer des résistances"
-                                               // lorsque le circuit eest ouvert mais ne contient aucun composants
+                                               // lorsque le circuit est ouvert mais ne contient aucun composants
         }
     }
 }
