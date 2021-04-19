@@ -51,8 +51,10 @@ public class Main {
             double choixUtilisateurTension = sc.nextInt();
             circuit.mettreSousTension(choixUtilisateurTension);
             System.out.println(circuit);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+        } catch (IllegalArgumentException e) { // C'est tannant je ne suis pas capable
+            System.out.println(e.getMessage());// de faire imprimer "le circuit est vide veuillez entrer des résistances"
+                                               // lorsque le circuit eest ouvert mais ne contient aucun composants
+
         }
     }
 }
