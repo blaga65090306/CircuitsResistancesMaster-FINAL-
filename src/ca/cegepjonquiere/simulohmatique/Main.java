@@ -35,7 +35,8 @@ public class Main {
                 "\nPour " + ANSI_RED + "FERMER" + ANSI_RESET + " un circuit en" + ANSI_YELLOW+ " PARALLÈLE" + ANSI_RESET + " --> ]\n" +
 
                 "\nN'oubliez pas de séparer " + ANSI_PURPLE + "CHAQUE" + ANSI_RESET + " caractère par un" + ANSI_CYAN + " ESPACE" + ANSI_RESET +
-                "\nPour vous aider --> Code couleur résisteur: " + ANSI_GREEN_BACKGROUND + "(NBROJVbMGLAo)" + ANSI_RESET + "\n" +
+                "\nPour vous aider --> Code couleur résisteur: " + ANSI_GREEN_BACKGROUND + "(NBROJVbMGLAo)" + ANSI_RESET +
+                "\n" + ANSI_PURPLE_BACKGROUND + "Exemple" + ANSI_RESET + ": [ GNRo ( VNRo BNRo ) RNRo ]\n" +
 
                 "\nVeuillez créer vos circuits avec vos résisteurs\n" +
                 "|       |       |       |       |      |      |\n" +
