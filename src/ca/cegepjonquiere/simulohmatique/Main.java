@@ -27,7 +27,7 @@ public class Main {
                 "\nN'oubliez pas de séparer " + ANSI_PURPLE + "CHAQUE" + ANSI_RESET + " caractère par un" + ANSI_CYAN + " ESPACE" + ANSI_RESET +
                 "\nPour vous aider --> Code couleur résisteur: (NBROJVbMGLAo)\n" +
 
-                "\nVeuillez créer vos circuits avec vos résisteurs -->\s)");
+                "\nVeuillez créer vos circuits avec vos résisteurs -->\s");
 
         Scanner sc = new Scanner(System.in);
 
